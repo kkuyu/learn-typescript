@@ -22,3 +22,10 @@ let sum: SumFunction;
 sum = function (a: number, b: number): number {
   return a + b;
 };
+
+interface StringArray {
+  [index: number]: string;
+}
+
+let arr: StringArray = ["a", "b", "c"];
+arr[0] = "A";
