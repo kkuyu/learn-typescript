@@ -29,3 +29,12 @@ interface StringArray {
 
 let arr: StringArray = ["a", "b", "c"];
 arr[0] = "A";
+
+interface StringRegexDictionary {
+  [key: string]: RegExp;
+}
+
+let obj: StringRegexDictionary = {
+  sth: /abc/,
+  jsFile: /\.js$/,
+};
