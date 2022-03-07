@@ -13,3 +13,12 @@ function getUser(user: User): void {
 }
 
 getUser(joy);
+
+interface SumFunction {
+  (a: number, b: number): number;
+}
+
+let sum: SumFunction;
+sum = function (a: number, b: number): number {
+  return a + b;
+};
