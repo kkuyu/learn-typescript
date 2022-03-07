@@ -38,3 +38,18 @@ let obj: StringRegexDictionary = {
   sth: /abc/,
   jsFile: /\.js$/,
 };
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+interface Developer extends Person {
+  language: string;
+}
+
+let cat: Developer = {
+  name: "cat",
+  age: 100,
+  language: "ts",
+};
