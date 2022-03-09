@@ -13,3 +13,19 @@ enum Brand {
 
 var myBrand = Brand.Nike;
 console.log(myBrand); // '나이키'
+
+enum Answer {
+  Yes = "Y",
+  No = "N",
+}
+
+function askQuestion(answer: Answer): boolean {
+  if (answer === Answer.Yes) {
+    return true;
+  }
+  if (answer === Answer.No) {
+    return false;
+  }
+}
+
+askQuestion(Answer.Yes);
