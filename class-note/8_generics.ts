@@ -38,3 +38,16 @@ function logLengthB<T extends LengthType>(text: T): T {
 
 logLengthB("joy");
 logLengthB(["hello", "type", "script"]);
+
+interface ShoppingItem {
+  name: string;
+  price: number;
+  stock: number;
+}
+
+function getShoppingItemOption<T extends keyof ShoppingItem>(itemOption: T): T {
+  return itemOption;
+}
+
+getShoppingItemOption("name");
+getShoppingItemOption("price");
