@@ -19,3 +19,10 @@ const numberObj: Dropdown<number> = {
   value: 10,
   selected: false,
 };
+
+function logLengthA<T>(text: T[]): T[] {
+  console.log(text.length);
+  return text;
+}
+
+logLengthA(["hello", "type", "script"]);
