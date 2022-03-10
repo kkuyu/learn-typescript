@@ -20,9 +20,21 @@ const numberObj: Dropdown<number> = {
   selected: false,
 };
 
+interface LengthType {
+  length: number;
+}
+
 function logLengthA<T>(text: T[]): T[] {
   console.log(text.length);
   return text;
 }
 
 logLengthA(["hello", "type", "script"]);
+
+function logLengthB<T extends LengthType>(text: T): T {
+  console.log(text.length);
+  return text;
+}
+
+logLengthB("joy");
+logLengthB(["hello", "type", "script"]);
