@@ -51,3 +51,21 @@ function getShoppingItemOption<T extends keyof ShoppingItem>(itemOption: T): T {
 
 getShoppingItemOption("name");
 getShoppingItemOption("price");
+
+function fetchItemsA(): string[] {
+  const items = ["a", "b", "c"];
+  return items;
+}
+
+let resultA = fetchItemsA();
+console.log(resultA);
+
+function fetchItemsB(): Promise<string[]> {
+  const items: string[] = ["a", "b", "c"];
+  return new Promise(function (resolve) {
+    resolve(items);
+  });
+}
+
+let resultB = fetchItemsB();
+console.log(resultB);
