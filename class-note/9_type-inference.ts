@@ -24,3 +24,5 @@ var detailedItem: DetailedDropdown<number> = {
   title: "123",
   tag: 123,
 };
+
+var arr: (string | number | boolean)[] = [1, 2, true, "a"];
