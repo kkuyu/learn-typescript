@@ -26,3 +26,13 @@ if ((joy as Developer).skill) {
   var age = (joy as Person).age;
   console.log(age);
 }
+
+function isDeveloper(target: Developer | Person): target is Developer {
+  return (target as Developer).skill !== undefined;
+}
+
+if (isDeveloper(joy)) {
+  console.log(joy.skill);
+} else {
+  console.log(joy.age);
+}
