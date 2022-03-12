@@ -11,6 +11,16 @@ interface Dropdown<T> {
 }
 
 var shoppingItem: Dropdown<string> = {
-  value: "abc",
-  title: "abc",
+  value: "foo",
+  title: "foo",
+};
+
+interface DetailedDropdown<K> extends Dropdown<K> {
+  tag: K;
+}
+
+var detailedItem: DetailedDropdown<number> = {
+  value: 123,
+  title: "123",
+  tag: 123,
 };
