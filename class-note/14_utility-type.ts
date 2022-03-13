@@ -29,3 +29,13 @@ const chingtao: Omit<AddressBook, "address" | "company"> = {
   name: "중국집",
   phone: 44455557777,
 };
+
+interface Address {
+  email: string;
+  address: string;
+}
+
+type MayHaveEmail = Partial<Address>;
+const me: MayHaveEmail = {};
+const you: MayHaveEmail = { email: "test@abc.com" };
+const all: MayHaveEmail = { email: "capt@hero.com", address: "Pangyo" };
