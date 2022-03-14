@@ -4,7 +4,8 @@
     "target": "ES5",
     "outDir": "./built",
     "moduleResolution": "node",
-    "lib": ["ES6", "DOM", "DOM.Iterable"]
+    "lib": ["ES6", "DOM", "DOM.Iterable"],
+    "noImplicitAny": true
   },
   "include": ["./src/**/*"]
 }
