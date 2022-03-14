@@ -26,3 +26,11 @@
 
 **Copyright © 2020 Captain Pangyo**
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License</a>.
+
+## 자바스크립트 프로젝트에 타입스크립트 적용하기
+
+1. 타입스크립트의 기본 환경 구성
+
+- NPM 초기화
+- 타입스크립트 라이브러리 설치
+- 타입스크립트 설정 파일 생성 및 기본 값 추가
