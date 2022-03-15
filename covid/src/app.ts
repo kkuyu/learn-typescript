@@ -76,9 +76,9 @@ async function handleListClick(event: any) {
   clearRecoveredList();
   startLoadingAnimation();
   isDeathLoading = true;
-  const { data: deathResponse } = await fetchCountryInfo(selectedId, "deaths");
-  const { data: recoveredResponse } = await fetchCountryInfo(selectedId, "recovered");
-  const { data: confirmedResponse } = await fetchCountryInfo(selectedId, "confirmed");
+  const { data: deathResponse } = await fetchCountryInfo(selectedId, CovidStatus.Deaths);
+  const { data: recoveredResponse } = await fetchCountryInfo(selectedId, CovidStatus.Recovered);
+  const { data: confirmedResponse } = await fetchCountryInfo(selectedId, CovidStatus.Confirmed);
   endLoadingAnimation();
   setDeathsList(deathResponse);
   setTotalDeathsByCountry(deathResponse);
