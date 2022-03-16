@@ -1,3 +1,5 @@
+import axios from "axios";
+
 // utils
 function $(selector: string): HTMLElement {
   return document.querySelector(selector);
