@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import * as Chart from "chart.js";
 
-import { CountrySummaryResponse, CovidSummaryResponse } from "./covid";
+import { Country, CountrySummaryResponse, CovidSummaryResponse } from "./covid";
 
 // utils
 function $(selector: string): HTMLElement {
@@ -187,25 +187,25 @@ function setChartData(data: any) {
 }
 
 function setTotalConfirmedNumber(data: CovidSummaryResponse) {
-  confirmedTotal.innerText = data.Countries.reduce((total: any, current: any) => (total += current.TotalConfirmed), 0);
+  confirmedTotal.innerText = data.Countries.reduce((total: number, current: Country) => (total += current.TotalConfirmed), 0).toString();
 }
 
 function setTotalDeathsByWorld(data: CovidSummaryResponse) {
-  deathsTotal.innerText = data.Countries.reduce((total: any, current: any) => (total += current.TotalDeaths), 0);
+  deathsTotal.innerText = data.Countries.reduce((total: number, current: Country) => (total += current.TotalDeaths), 0).toString();
 }
 
 function setTotalRecoveredByWorld(data: CovidSummaryResponse) {
-  recoveredTotal.innerText = data.Countries.reduce((total: any, current: any) => (total += current.TotalRecovered), 0);
+  recoveredTotal.innerText = data.Countries.reduce((total: number, current: Country) => (total += current.TotalRecovered), 0).toString();
 }
 
 function setCountryRanksByConfirmedCases(data: CovidSummaryResponse) {
-  const sorted = data.Countries.sort((a: any, b: any) => b.TotalConfirmed - a.TotalConfirmed);
-  sorted.forEach((value: any) => {
+  const sorted = data.Countries.sort((a: Country, b: Country) => b.TotalConfirmed - a.TotalConfirmed);
+  sorted.forEach((value: Country) => {
     const li = document.createElement("li");
     li.setAttribute("class", "list-item flex align-center");
     li.setAttribute("id", value.Slug);
     const span = document.createElement("span");
-    span.textContent = value.TotalConfirmed;
+    span.textContent = value.TotalConfirmed.toString();
     span.setAttribute("class", "cases");
     const p = document.createElement("p");
     p.setAttribute("class", "country");
