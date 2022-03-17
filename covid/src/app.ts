@@ -1,6 +1,8 @@
 import axios, { AxiosResponse } from "axios";
 import * as Chart from "chart.js";
 
+import { CovidSummaryResponse } from "./covid";
+
 // utils
 function $(selector: string): HTMLElement {
   return document.querySelector(selector);
@@ -35,13 +37,6 @@ function createSpinnerElement(id: string) {
 // state
 let isDeathLoading = false;
 const isRecoveredLoading = false;
-
-interface CovidSummaryResponse {
-  Countries: any[];
-  Date: string;
-  Global: any;
-  Message: string;
-}
 
 function fetchCovidSummary(): Promise<AxiosResponse<CovidSummaryResponse>> {
   const url = "https://api.covid19api.com/summary";
