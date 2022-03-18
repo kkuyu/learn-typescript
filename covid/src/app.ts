@@ -7,7 +7,7 @@ import { Country, CountrySummaryInfo, CountrySummaryResponse, CovidSummaryRespon
 function $(selector: string): HTMLElement {
   return document.querySelector(selector);
 }
-function getUnixTimestamp(date: Date) {
+function getUnixTimestamp(date: Date | string) {
   return new Date(date).getTime();
 }
 
