@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import * as Chart from "chart.js";
+import Chart from "chart.js";
 
 import { Country, CountrySummaryInfo, CountrySummaryResponse, CovidSummaryResponse } from "./covid";
 
@@ -36,7 +36,6 @@ function createSpinnerElement(id: string) {
 
 // state
 let isDeathLoading = false;
-const isRecoveredLoading = false;
 
 function fetchCovidSummary(): Promise<AxiosResponse<CovidSummaryResponse>> {
   const url = "https://api.covid19api.com/summary";
@@ -160,8 +159,9 @@ async function setupData() {
   setLastUpdatedTimestamp(data);
 }
 
-function renderChart(data: any, labels: any) {
-  var ctx = $("#lineChart").getContext("2d");
+function renderChart(data: number[], labels: string[]) {
+  const lineChart = $("#lineChart") as HTMLCanvasElement;
+  const ctx = lineChart.getContext("2d");
   Chart.defaults.global.defaultFontColor = "#f5eaea";
   new Chart(ctx, {
     type: "line",
