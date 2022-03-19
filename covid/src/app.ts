@@ -62,10 +62,11 @@ function startApp() {
 
 // events
 function initEvents() {
+  if (!rankList) return;
   rankList.addEventListener("click", handleListClick);
 }
 
-async function handleListClick(event: MouseEvent) {
+async function handleListClick(event: Event) {
   let selectedId;
   if (event.target instanceof HTMLParagraphElement || event.target instanceof HTMLSpanElement) {
     selectedId = event.target.parentElement.id;
