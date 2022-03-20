@@ -110,7 +110,8 @@ function setDeathsList(data: CountrySummaryResponse) {
 }
 
 function clearDeathList() {
-  deathsList.innerHTML = null;
+  if (!deathsList) return;
+  deathsList.innerHTML = "";
 }
 
 function setTotalDeathsByCountry(data: CountrySummaryResponse) {
@@ -134,7 +135,8 @@ function setRecoveredList(data: CountrySummaryResponse) {
 }
 
 function clearRecoveredList() {
-  recoveredList.innerHTML = null;
+  if (!recoveredList) return;
+  recoveredList.innerHTML = "";
 }
 
 function setTotalRecoveredByCountry(data: CountrySummaryResponse) {
