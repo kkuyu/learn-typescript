@@ -5,7 +5,7 @@ import { Country, CountrySummaryInfo, CountrySummaryResponse, CovidSummaryRespon
 
 // utils
 function $(selector: string): HTMLElement {
-  return document.querySelector(selector);
+  return document.querySelector(selector) as HTMLElement;
 }
 function getUnixTimestamp(date: Date | string) {
   return new Date(date).getTime();
@@ -105,7 +105,7 @@ function setDeathsList(data: CountrySummaryResponse) {
     p.textContent = new Date(value.Date).toLocaleDateString().slice(0, -1);
     li.appendChild(span);
     li.appendChild(p);
-    deathsList.appendChild(li);
+    deathsList!.appendChild(li);
   });
 }
 
